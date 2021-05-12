@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <section class="navbar">
+            <div class="logo">
+                <h1>Pattern Maestro.AI</h1>
+            </div>
+            <div class="navlinks">
+                <ul class="links">
+                    <li><a class="link" href="{{ url_for('hello_world') }}">Home</a></li>
+                    <li><a class="link" href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                    <li><a class="link" href="{{ url_for('cancer') }}">Breast Cancer</a></li>
+                    <li><a class="link" href="{{ url_for('Covid') }}">Covid 19</a></li>
+                    <li><a class="link" href="{{ url_for('diamonds') }}">Diamonds</a></li>
+                    <li><a class="link" href="{{ url_for('about_us') }}">About Us</a></li>
+                </ul>
+            </div>
+        </section>
+        <h1 style="padding-left: 700px; background-color: coral;"><i>Creators</i></h1>
+        <div style="padding-top: 30px;">
+            <p style="display:inline;">
+            <div style="padding-left: 70px;">
+                <img class="nandita" src="./static/shiv1.jpg" alt="my picture" style="float: left;">
+            </div>
+            <h1 style="position: absolute; padding-left: 300px; padding-top: 40px;">Shivesh Narain.B</h1>
+            <p style="position: absolute; padding-top: 80px; padding-left: 300px; margin-right: 100px; margin-right: 300px;">
+                    Shivesh Narain.B is an optimistic mechanical engineering student,who acquired a sudden interest in data science and built
+                    a strong desire to learn and explore in and around of it.
+                    He is eager and looking forward to gain maximum knowledge by making his hands dirty with the data.
+                
+            </p>
+            </p>
+        </div>
+        <div style="padding-top: 270px;">
+            <hr style="padding-top: 70px;">
+            <p style="display:inline;">
+            <div style="padding-left: 70px;">
+                <img class="nandita" src="./static/nan.jpg" alt="my picture" style="float: left;">
+            </div>
+            <h1 style="position: absolute; padding-left: 300px; padding-top: 40px;">Nandita.S</h1>
+            <p style="position: absolute; padding-top: 80px; padding-left: 300px; margin-right: 300px;">
+                Nandita S is student of mechanical engineering at SSN College of Engineering. She is highly interested in statistics
+                which enrouted her into the field of data science. She is a passionate data scientist and further strives to explore
+                more in the field of data science and machine learning.
+                
+            </p>
+            </p>
+        </div>
+            
+            
+    </body>
+</html>

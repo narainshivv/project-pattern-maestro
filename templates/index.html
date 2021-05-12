@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./static/css/styles.css">
+    </head>
+    <body>
+        <section class="navbar">
+            <div class="logo">
+                <h1>Pattern Maestro.AI</h1>
+            </div>
+            <div class="navlinks">
+                <ul class="links">
+                    <li><a class="link" href="{{ url_for('hello_world') }}">Home</a></li>
+                    <li><a class="link" href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                    <li><a class="link" href="{{ url_for('cancer') }}">Breast Cancer</a></li>
+                    <li><a class="link" href="{{ url_for('Covid') }}">Covid 19</a></li>
+                    <li><a class="link" href="{{ url_for('diamonds') }}">Diamonds</a></li>
+                    <li><a class="link" href="{{ url_for('about_us') }}">About Us</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="body">
+            <div class="wording">
+                <h1 class="passion" style="margin-right: 40px; padding-left: 140px;">We are passionate and aspiring Data Scientists YAY!</h1>
+            </div>
+        </section>
+        <section class="cont">
+            <section class="about-us">
+               
+            </section>
+        </section>
+    </body>
+</html>

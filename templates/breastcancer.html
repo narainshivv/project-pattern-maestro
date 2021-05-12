@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <style>
+            ::placeholder {
+                color:black;
+                opacity: 1;
+                /* Firefox */
+            }
+        
+            :-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: black;
+            }
+        
+            ::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: black;
+            }
+        </style>
+    </head>
+    <body style="background-image: url('https://www.teahub.io/photos/full/122-1221528_breast-cancer-walk-sign.jpg'); background-repeat: no-repeat; background-color: transparent; background-size: cover;">
+        <section class="navbar">
+            <div class="logo">
+                <h1>Pattern Maestro.AI</h1>
+            </div>
+            <div class="navlinks">
+                <ul class="links">
+                    <li><a class="link" href="{{ url_for('hello_world') }}">Home</a></li>
+                    <li><a class="link" href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                    <li><a class="link" href="{{ url_for('cancer') }}">Breast Cancer</a></li>
+                    <li><a class="link" href="{{ url_for('Covid') }}">Covid 19</a></li>
+                    <li><a class="link" href="{{ url_for('diamonds') }}">Diamonds</a></li>
+                    <li><a class="link" href="{{ url_for('about_us') }}">About Us</a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="showcase-form card">
+            <h2>Cancer Status</h2>
+            <form action='/predict3' method="post">
+                <div class="form-control">
+                    <input  type="text" name="mean radius" placeholder="mean radius">
+                </div>
+                <div class="form-control">
+                    <input type="text" name="mean texture" placeholder="mean texture" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="mean smoothness" placeholder="mean smoothness" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="mean concavity" placeholder="mean concavity" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="mean symmetry" placeholder="mean symmetry" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="mean fractal dimension" placeholder="mean fractal dimension" required>
+                </div>
+               
+                <input style="background-color: #000000;color: #FFFFFF;float: left; padding: 10px; border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px; " class="btn" type="submit" value="predict" class="btn btn-primary">
+            </form>
+            {{pred}}
+        </div>
+    </body>
+</html>

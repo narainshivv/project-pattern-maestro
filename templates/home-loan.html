@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+<body class="home-ln">
+    <section class="navbar">
+        <div class="logo">
+            <h1>Pattern Maestro.AI</h1>
+        </div>
+        <div class="navlinks">
+            <ul class="links">
+                <li><a class="link" href="{{ url_for('hello_world') }}">Home</a></li>
+                <li><a class="link" href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                <li><a class="link" href="{{ url_for('cancer') }}">Breast Cancer</a></li>
+                <li><a class="link" href="{{ url_for('Covid') }}">Covid 19</a></li>
+                <li><a class="link" href="{{ url_for('diamonds') }}">Diamonds</a></li>
+                <li><a class="link" href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="showcase-form card">
+        <h2>Know your loan status</h2>
+        <form action='/predict' method="post" >
+            <div class="form-control">
+                <input list="browsers" type="text" name="Married" placeholder="Married? 'No':0,'Yes':1">
+                <datalist id="browsers">
+                    <option value="0">
+                    <option value="1">
+                </datalist>
+            </div>
+            <div class="form-control">
+                <input list="Dependents" type="text" name="Dependents" placeholder="Dependents"  required>
+                <datalist id="Dependents">
+                    <option value="0">
+                    <option value="1">
+                    <option value="2">
+                    <option value="3">
+                </datalist>
+            </div>
+            <div class="form-control">
+                <input list="Education" type="text" name="Education" placeholder="Education 'Graduate':0,'Not graduate':1" required>
+                <datalist id="Education">
+                    <option value="0">
+                    <option value="1">
+                </datalist>
+            </div>
+            <div class="form-control">
+                <input list="selfemp" type="text" name="Self_Employed" placeholder="Self_Employed 'No':0,'Yes':1" required>
+                <datalist id="selfemp">
+                    <option value="0">
+                    <option value="1">
+                </datalist>
+            </div>
+            <div class="form-control">
+                <input type="text" name="Applicant Income" placeholder="Applicant Income" required>
+            </div>
+            <div class="form-control">
+                <input type="text" name="Coapplicant Income" placeholder="Coapplicant Income" required>
+            </div>
+            <div class="form-control">
+                <input type="text" name="Loan Amount" placeholder="Loan Amount" required>
+            </div>
+            <div class="form-control">
+                <input list="Loan_Amount_Term" type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required>
+                <datalist id="Loan_Amount_Term">
+                    <option value="1">
+                    <option value="2">
+                    <option value="3">
+                </datalist>
+            </div>
+            <div class="form-control">
+                <input list="Credit_History" type="text" name="Credit_History" placeholder="Credit_History" required>
+                <datalist id="Credit_History">
+                    <option value="0">
+                    <option value="1">
+                </datalist>
+            </div>
+            <div class="form-control">
+                <input list="Property_Area" type="text" name="Property_Area" placeholder="Property_Area 'Urban':0, 'Rural':1, 'Semiurban':2" required>
+                <datalist id="Property_Area">
+                    <option value="0">
+                    <option value="1">
+                    <option value="2">
+                </datalist>
+            </div>
+            
+            <input style="background-color: #000000;color: #FFFFFF;float: left; padding: 10px; border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px; " class="btn" type="submit" value="predict" class="btn btn-primary">
+        </form>
+        {{pred}}
+    </div>
+    </div>
+    <div style="font-size: 50px; padding-top: 200px; padding-left: 200px;">
+        {{pred}}
+    </div>
+</body>
+</html>

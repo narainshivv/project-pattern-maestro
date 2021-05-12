@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            ::placeholder {
+                color: black;
+                opacity: 1;
+                /* Firefox */
+            }
+        
+            :-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: black;
+            }
+        
+            ::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: black;
+            }
+        </style>
+    </head>
+    <body style="background-image:url('https://admin.acceleratingscience.com/mining/wp-content/uploads/sites/3/2018/04/diamond.jpg');background-size:cover;background-repeat: no=repeat;">
+        <section class="navbar">
+            <div class="logo">
+                <h1>Pattern Maestro.AI</h1>
+            </div>
+            <div class="navlinks">
+                <ul class="links">
+                    <li><a class="link" href="{{ url_for('hello_world') }}">Home</a></li>
+                    <li><a class="link" href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                    <li><a class="link" href="{{ url_for('cancer') }}">Breast Cancer</a></li>
+                    <li><a class="link" href="{{ url_for('Covid') }}">Covid 19</a></li>
+                    <li><a class="link" href="{{ url_for('diamonds') }}">Diamonds</a></li>
+                    <li><a class="link" href="{{ url_for('about_us') }}">About Us</a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="showcase-form card">
+            <h2>Know your diamond price</h2>
+            <form action='/predict1' method="post">
+                <div class="form-control">
+                    <input type="text" name="Carat" placeholder="Carat?">
+                </div>
+                <div class="form-control">
+                    <input list="Cut" type="text" name="Cut" placeholder="Cut 'Ideal':0, 'Premium':1, 'Good':2, 'Very Good':3, 'Fair':4" required>
+                    <datalist id="Cut">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                    </datalist>
+                </div>
+                <div class="form-control">
+                    <input list="Color" type="text" name="Color" placeholder="Color 'E':0, 'I':1, 'J':2, 'H':3, 'F':4, 'G':5, 'D':6"" required>
+                    <datalist id="Color" >
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                    </datalist>
+                </div>
+                <div class="form-control">
+                    <input list="Clarity" type="text" name="Clarity" placeholder="Clarity 'SI2':0, 'SI1':1, 'VS1':2, 'VS2':3, 'VVS2':4, 'VVS1':5, 'I1':6, 'IF':7" required>
+                    <datalist id="Clarity" >
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                    </datalist>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="Depth" placeholder="Depth" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="Table" placeholder="Table" required>
+                </div>
+                
+        
+                <input
+                    style="background-color: #000000;color: #FFFFFF;float: left; padding: 10px; border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px; "
+                    class="btn" type="submit" value="predict" class="btn btn-primary">
+            </form> 
+            {{prediction_text}}
+        </div>
+    </body>
+</html>
